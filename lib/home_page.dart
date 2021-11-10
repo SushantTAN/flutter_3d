@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/flutter_cube.dart';
+import 'package:flutter_3d/panorama_example.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,6 +16,13 @@ class _HomePageState extends State<HomePage> {
     shark = Object(fileName: "assets/shark/shark.obj");
     shark.rotation.setValues(0, 90, 0);
     shark.updateTransform();
+
+    jet.rotation.setValues(0, 90, 0);
+    // jet.position.setValues(0.1, 0.1, 0.2);
+    // jet.scale.setValues(2, 2, 2);
+    // jet.scale.splat(1.5);
+
+    jet.updateTransform();
     super.initState();
   }
 
@@ -24,8 +32,22 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: Text("Flutter 3D"),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Panoramic();
+                }));
+              },
+              child: Text("panorama"),
+            ),
+          )
+        ],
       ),
       body: Container(
+        color: Colors.grey,
         child: Column(
           children: [
             Expanded(
