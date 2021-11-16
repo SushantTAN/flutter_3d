@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.1
   flutter_cube: ^0.0.6
   panorama: ^0.0.2
-  simple_3d_renderer: ^2.0.2
+  simple_3d_renderer: ^3.0.0
   simple_3d: ^5.0.2
   
 dev_dependencies:
